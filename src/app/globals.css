@@ -1,26 +1,218 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* -----------------------------------------------------------
+   HARA TACTICAL PERFORMANCE SYSTEM
+   Design tokens — colors, type, spacing.
+   Rooted in High-Contrast Tacticalism.
+   ----------------------------------------------------------- */
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Surface / depth */
+  --color-bg: #0c0f0f;
+  --color-bg-elevated: #121414;
+  --color-bg-surface: #1a1c1c;
+  --color-bg-surface-high: #1e2020;
+  --color-bg-surface-highest: #282a2b;
+
+  /* Foreground */
+  --color-fg: #f5f5f5;
+  --color-fg-muted: #c7c9ab;
+  --color-fg-subtle: #919378;
+
+  /* Borders */
+  --color-border: #2a2c2c;
+  --color-border-strong: #464832;
+
+  /* Brand */
+  --color-accent: #eaff00;
+  --color-accent-dim: #c0d100;
+  --color-accent-deep: #444b00;
+  --color-on-accent: #0c0f0f;
+
+  /* Status */
+  --color-danger: #ff4655;
+  --color-success: #76d472;
+
+  /* Type families (loaded via next/font in layout) */
+  --font-display: var(--font-anton), "Anton", "Impact", system-ui, sans-serif;
+  --font-body: var(--font-hanken), "Hanken Grotesk", system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), "JetBrains Mono", "Menlo", monospace;
+
+  /* Spacing scale (4px base — micro) */
+  --spacing-page-x-mobile: 1rem;
+  --spacing-page-x-desktop: 4rem;
+  --spacing-section: 7.5rem;
+  --spacing-section-mobile: 4rem;
+
+  /* Animation */
+  --ease-snap: cubic-bezier(0.2, 0.9, 0.3, 1);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* -----------------------------------------------------------
+   Base reset & global behavior
+   ----------------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+  border-color: var(--color-border);
+}
+
+html {
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+  color-scheme: dark;
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: var(--color-accent);
+  color: var(--color-on-accent);
+}
+
+/* Hard edges by default — no rounded corners */
+button,
+input,
+textarea,
+select {
+  border-radius: 0;
+}
+
+/* -----------------------------------------------------------
+   Utility classes specific to the design system
+   ----------------------------------------------------------- */
+
+@utility text-display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  line-height: 0.95;
+}
+
+@utility text-mono {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+@utility container-tactical {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 96rem;
+  padding-inline: var(--spacing-page-x-mobile);
+}
+
+@media (min-width: 768px) {
+  .container-tactical {
+    padding-inline: var(--spacing-page-x-desktop);
+  }
+}
+
+/* -----------------------------------------------------------
+   Animations
+   ----------------------------------------------------------- */
+
+@keyframes ticker {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes pulse-accent {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+@keyframes scan-line {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+.animate-ticker {
+  animation: ticker 40s linear infinite;
+}
+
+.animate-pulse-accent {
+  animation: pulse-accent 2s ease-in-out infinite;
+}
+
+/* -----------------------------------------------------------
+   Grain noise overlay — fixed, low opacity
+   Adds physical texture per design system spec
+   ----------------------------------------------------------- */
+
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 100;
+  opacity: 0.03;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.6'/%3E%3C/svg%3E");
+}
+
+/* -----------------------------------------------------------
+   Clipped corner (military ID tag effect) — for CTAs
+   ----------------------------------------------------------- */
+
+.clip-corner {
+  clip-path: polygon(
+    0 0,
+    calc(100% - 0.75rem) 0,
+    100% 0.75rem,
+    100% 100%,
+    0.75rem 100%,
+    0 calc(100% - 0.75rem)
+  );
+}
+
+.clip-corner-sm {
+  clip-path: polygon(
+    0 0,
+    calc(100% - 0.5rem) 0,
+    100% 0.5rem,
+    100% 100%,
+    0.5rem 100%,
+    0 calc(100% - 0.5rem)
+  );
+}
+
+/* -----------------------------------------------------------
+   Reduced motion accessibility
+   ----------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
