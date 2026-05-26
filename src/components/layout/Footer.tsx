@@ -1,18 +1,18 @@
 import { Logo } from "@/components/ui/Logo";
 import { SpecTag } from "@/components/ui/SpecTag";
-import { siteConfig } from "@/lib/site";
 import { SocialIcon } from "@/components/ui/SocialIcon";
+import { siteConfig } from "@/lib/site";
 
 const linkCol1 = [
-  { href: "#produto", label: "Produto" },
-  { href: "#dentista", label: "Engenharia" },
-  { href: "#processo", label: "Processo" },
+  { href: "/#produto", label: "Produto v.01" },
+  { href: "/#custom", label: "Custom" },
+  { href: "/#processo", label: "Processo" },
 ];
 
 const linkCol2 = [
-  { href: "#atletas", label: "Atletas" },
-  { href: "#faq", label: "FAQ" },
-  { href: "/termos", label: "Termos" },
+  { href: "/atletas", label: "Atletas" },
+  { href: "/#faq", label: "FAQ" },
+  { href: "/checkout", label: "Comprar" },
 ];
 
 export function Footer() {
@@ -32,7 +32,7 @@ export function Footer() {
           {/* Links */}
           <div className="md:col-span-2 flex flex-col gap-3">
             <h3 className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--color-fg-subtle)] mb-2">
-              Site
+              Produto
             </h3>
             {linkCol1.map((l) => (
               <a
@@ -47,7 +47,7 @@ export function Footer() {
 
           <div className="md:col-span-2 flex flex-col gap-3">
             <h3 className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--color-fg-subtle)] mb-2">
-              Suporte
+              Mais
             </h3>
             {linkCol2.map((l) => (
               <a
@@ -63,10 +63,10 @@ export function Footer() {
           {/* Newsletter */}
           <div className="md:col-span-3 flex flex-col gap-4">
             <h3 className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--color-fg-subtle)]">
-              Recrutamento
+              Próximo drop
             </h3>
             <p className="text-sm text-[var(--color-fg-muted)]">
-              Receba o drop da próxima versão antes do público.
+              Cadastre o email e te aviso antes de qualquer um.
             </p>
             <form className="flex flex-col gap-2">
               <label htmlFor="newsletter-email" className="sr-only">

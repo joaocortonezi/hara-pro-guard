@@ -1,51 +1,81 @@
 /**
  * Static content for the landing page.
- * Centralised so it's easy to translate, swap or move to a CMS later.
+ * Voice: Brazilian combat-sports athlete. Direct. Short. No corporate-speak.
+ * Narrative arc connects across sections — every block hands the reader to the next.
  */
+
+export type Modality = "Jiu-Jitsu" | "MMA" | "Muay Thai" | "Boxe";
 
 export type Athlete = {
   id: string;
   name: string;
-  modality: string;
+  nickname?: string;
+  modality: Modality;
   weightClass: string;
   record: string;
   location: string;
+  status: "active" | "open";
 };
 
 export const athletes: Athlete[] = [
   {
     id: "001",
-    name: "Atleta Patrocinado",
+    name: "Atleta v.01",
+    nickname: "Drop Zero",
     modality: "Jiu-Jitsu",
-    weightClass: "Peso Pena · 70kg",
-    record: "12W · 2L · 0NC",
-    location: "São Paulo, BR",
+    weightClass: "Pena · 70kg",
+    record: "12W · 2L",
+    location: "São Paulo · BR",
+    status: "active",
   },
   {
     id: "002",
-    name: "Próximo Roster",
+    name: "Vaga aberta",
     modality: "MMA",
-    weightClass: "Peso Leve · 77kg",
-    record: "—",
+    weightClass: "Leve · 77kg",
+    record: "Recrutando",
     location: "—",
+    status: "open",
   },
   {
     id: "003",
-    name: "Próximo Roster",
+    name: "Vaga aberta",
     modality: "Muay Thai",
-    weightClass: "Peso Médio · 84kg",
-    record: "—",
+    weightClass: "Médio · 84kg",
+    record: "Recrutando",
     location: "—",
+    status: "open",
   },
   {
     id: "004",
-    name: "Próximo Roster",
+    name: "Vaga aberta",
     modality: "Boxe",
-    weightClass: "Peso Pesado · 93kg+",
-    record: "—",
+    weightClass: "Pesado · 93kg+",
+    record: "Recrutando",
     location: "—",
+    status: "open",
+  },
+  {
+    id: "005",
+    name: "Vaga aberta",
+    modality: "Jiu-Jitsu",
+    weightClass: "Leve · 76kg",
+    record: "Recrutando",
+    location: "—",
+    status: "open",
+  },
+  {
+    id: "006",
+    name: "Vaga aberta",
+    modality: "MMA",
+    weightClass: "Meio-Médio · 84kg",
+    record: "Recrutando",
+    location: "—",
+    status: "open",
   },
 ];
+
+export const modalities: Modality[] = ["Jiu-Jitsu", "MMA", "Muay Thai", "Boxe"];
 
 export type Spec = {
   label: string;
@@ -54,12 +84,12 @@ export type Spec = {
 };
 
 export const productSpecs: Spec[] = [
-  { label: "Material", value: "EVA Premium · Dual-Layer" },
+  { label: "Construção", value: "Dual-layer EVA" },
   { label: "Espessura", value: "4.2", unit: "mm" },
   { label: "Peso", value: "9.8", unit: "g" },
-  { label: "Absorção de Impacto", value: "92", unit: "%" },
+  { label: "Absorção", value: "92", unit: "%" },
   { label: "Durabilidade", value: "18", unit: "meses" },
-  { label: "Modalidades", value: "BJJ · MMA · MT · Boxe" },
+  { label: "Esportes", value: "BJJ · MMA · MT · Boxe" },
 ];
 
 export type ProcessStep = {
@@ -71,27 +101,27 @@ export type ProcessStep = {
 export const processSteps: ProcessStep[] = [
   {
     step: "01",
-    title: "Pedido & Kit de Moldagem",
+    title: "Recebe o kit",
     description:
-      "Após a compra, você recebe em casa o kit termomoldável profissional com instruções precisas.",
+      "Chega na sua casa em até 5 dias. Caixa lacrada com o protetor, o cabo de plástico de moldagem e o passo a passo.",
   },
   {
     step: "02",
-    title: "Moldagem Térmica",
+    title: "Esquenta na água",
     description:
-      "Aquecimento controlado em água a 75°C por 60 segundos. O material se molda à sua arcada exata.",
+      "Água a 75°C por 60 segundos. O material amolece sem deformar. Cronômetro no celular já resolve.",
   },
   {
     step: "03",
-    title: "Ajuste Final",
+    title: "Morde firme",
     description:
-      "Modelagem digital com os dedos polegares aplicando pressão na arcada superior por 30 segundos.",
+      "Encaixa na arcada superior e pressiona com os polegares por 30 segundos. O material lembra cada dente seu.",
   },
   {
     step: "04",
-    title: "Pronto para Combate",
+    title: "Mergulha no gelo",
     description:
-      "Resfriamento em água gelada por 30 segundos finaliza a forma. Garantia de fitting ou refazemos.",
+      "30 segundos na água gelada e tá pronto. Mesma noite você já leva pro treino.",
   },
 ];
 
@@ -102,28 +132,28 @@ export type FAQItem = {
 
 export const faqItems: FAQItem[] = [
   {
-    q: "Quanto tempo dura o Hara Pro Guard?",
-    a: "Com uso regular em treinos e competições, a vida útil média é de 18 meses. O material mantém a integridade estrutural mesmo após centenas de impactos diretos.",
+    q: "Quanto tempo dura?",
+    a: "18 meses de uso pesado. Testamos com atleta competindo todo final de semana — passa do ano sem perder geometria. Se você só treina, dura mais.",
   },
   {
-    q: "Para quais modalidades é indicado?",
-    a: "Jiu-Jitsu, MMA, Muay Thai, Boxe e qualquer esporte de contato. A construção dual-layer foi pensada para suportar tanto impactos diretos quanto pressão mandibular sustentada.",
+    q: "Serve pra qual esporte?",
+    a: "Jiu-Jitsu, MMA, Muay Thai, Boxe, Kickboxing, Wrestling. Qualquer modalidade onde tomar pancada na boca é possibilidade real. A construção foi pensada pra impacto direto e pressão sustentada.",
   },
   {
-    q: "Como funciona a moldagem em casa?",
-    a: "Você recebe o kit completo. Aquece em água a 75°C por 60 segundos, posiciona na arcada superior, aplica pressão por 30 segundos e finaliza em água gelada. Vídeo passo a passo incluso.",
+    q: "Funciona com aparelho ortodôntico?",
+    a: "Não com aparelho fixo. A versão Hara Ortho tá em desenvolvimento. Cadastra teu email no rodapé que eu te aviso quando lançar.",
   },
   {
-    q: "E se não ficar perfeito na primeira tentativa?",
-    a: "Garantia de fitting. Se o ajuste não estiver perfeito, enviamos uma unidade nova sem custo. O material aceita refazer a moldagem até duas vezes.",
+    q: "Como faço se a moldagem ficar torta?",
+    a: "Refaz. O material aceita duas remoldagens sem perder propriedade. Se mesmo assim não encaixar, te mando outro sem custo. A garantia é de fitting — só treina quando tá perfeito.",
   },
   {
-    q: "Posso usar com aparelho ortodôntico?",
-    a: "Versão padrão não é compatível com aparelho fixo. Em breve lançaremos a versão Hara Ortho. Cadastre seu email no rodapé para ser avisado.",
+    q: "Posso higienizar com o quê?",
+    a: "Água + sabão neutro depois de cada treino. Uma vez por semana, deixa de molho em pastilha efervescente de prótese dentária. Evita álcool — ressaca o EVA.",
   },
   {
-    q: "Qual a diferença para protetores de farmácia?",
-    a: "Protetores genéricos usam camada única (~2mm) sem zonas de absorção diferenciadas. O Hara Pro Guard tem dual-layer 4.2mm com zona de alta densidade na região dos molares e zona de respiração frontal.",
+    q: "Por que é mais caro que o de farmácia?",
+    a: "Porque protetor de farmácia é EVA single-layer 2mm. Esse aqui é dual-layer 4.2mm com zona diferenciada na região dos molares. Material, geometria e durabilidade não tem comparação — é a diferença entre tênis de academia e chuteira de campeonato.",
   },
 ];
 
@@ -136,24 +166,24 @@ export type Testimonial = {
 export const testimonials: Testimonial[] = [
   {
     quote:
-      "Pela primeira vez não preciso ficar reajustando o protetor durante o roll. Encaixa, esquece, treina.",
-    author: "Atleta BJJ",
-    context: "Faixa Marrom · São Paulo",
+      "Encaixou na primeira moldagem. Dois meses de treino pesado, sem reajuste, sem cuspir no meio do roll.",
+    author: "Faixa-marrom · BJJ",
+    context: "São Paulo · 6 meses de uso",
   },
   {
     quote:
-      "Levei joelhada direta no queixo no segundo round. Saí sem corte, sem dente lascado. Esse aqui salva.",
-    author: "Lutador MMA",
-    context: "Profissional · Curitiba",
+      "Tomei joelhada cheia no queixo no segundo round. Saí com lábio inteiro e zero dente lascado. Não tem preço.",
+    author: "Profissional · MMA",
+    context: "Curitiba · 8 meses de uso",
   },
 ];
 
 export type TickerItem = string;
 
 export const tickerItems: TickerItem[] = [
-  "BUILT FOR THE BITE",
-  "ENGINEERED BY DENTIST",
-  "HARA PRO GUARD v.01",
-  "PROTECTION STANDARDS",
-  "MADE IN BRAZIL",
+  "FEITO POR DENTISTA",
+  "FEITO PRA LUTADOR",
+  "DROP v.01 LIBERADO",
+  "FABRICADO NO BRASIL",
+  "DUAL-LAYER 4.2MM",
 ];

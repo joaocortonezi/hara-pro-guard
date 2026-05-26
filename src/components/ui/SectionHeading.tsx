@@ -7,6 +7,7 @@ type SectionHeadingProps = {
   title: string;
   description?: string;
   align?: "left" | "center";
+  accent?: "yellow" | "green";
   className?: string;
 };
 
@@ -16,6 +17,7 @@ export function SectionHeading({
   title,
   description,
   align = "left",
+  accent = "yellow",
   className,
 }: SectionHeadingProps) {
   return (
@@ -26,8 +28,12 @@ export function SectionHeading({
         className,
       )}
     >
-      <SpecTag label={eyebrow} value={eyebrowValue} variant="accent" />
-      <h2 className="text-display text-4xl sm:text-5xl md:text-7xl text-[var(--color-fg)]">
+      <SpecTag
+        label={eyebrow}
+        value={eyebrowValue}
+        variant={accent === "green" ? "green" : "accent"}
+      />
+      <h2 className="text-display text-4xl sm:text-5xl md:text-7xl text-[var(--color-fg)] whitespace-pre-line">
         {title}
       </h2>
       {description && (

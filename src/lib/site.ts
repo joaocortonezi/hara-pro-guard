@@ -2,8 +2,8 @@ export const siteConfig = {
   name: "Hara Pro Guard",
   shortName: "HARA PRO",
   description:
-    "Protetor bucal desenvolvido por dentista para atletas de esporte de combate. Engenharia precisa, proteção sem concessão.",
-  tagline: "BUILT FOR THE BITE.",
+    "Protetor bucal feito por dentista pra quem treina de verdade. Construção dual-layer 4.2mm. O que tinha que ter sido feito há 10 anos.",
+  tagline: "FEITO POR DENTISTA. FEITO PRA LUTADOR.",
   url: "https://haraproguard.com.br",
   ogImage: "/og.jpg",
   links: {
@@ -15,6 +15,12 @@ export const siteConfig = {
     name: "Dr. João Hara",
     role: "Cirurgião-Dentista Esportivo",
     cro: "CRO-SP XXXXX",
+  },
+  product: {
+    name: "Hara Pro Guard v.01",
+    price: 249,
+    priceFormatted: "R$ 249",
+    installments: "3x R$ 83 sem juros",
   },
   shipping: {
     countries: ["Brasil"],

@@ -29,6 +29,15 @@
   --color-accent-deep: #444b00;
   --color-on-accent: #0c0f0f;
 
+  /* Custom tier — bespoke mouthguard signal */
+  --color-custom: #10f0a0;
+  --color-custom-dim: #0bc283;
+  --color-custom-deep: #054a33;
+  --color-on-custom: #0c0f0f;
+
+  /* Pure-black accent surface (per design.md "deep backgrounds and high-contrast sections") */
+  --color-bg-deep: #000000;
+
   /* Status */
   --color-danger: #ff4655;
   --color-success: #76d472;
@@ -151,6 +160,15 @@ select {
   }
   100% {
     transform: translateY(100vh);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.3;
   }
 }
 

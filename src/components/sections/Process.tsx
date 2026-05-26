@@ -1,4 +1,5 @@
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { MotionReveal, MotionStagger, MotionStaggerItem } from "@/components/ui/MotionReveal";
 import { processSteps } from "@/lib/data";
 
 export function Process() {
@@ -8,12 +9,14 @@ export function Process() {
       className="relative py-24 md:py-32 lg:py-40 border-t border-[var(--color-border)] bg-[var(--color-bg-elevated)]"
     >
       <div className="container-tactical">
-        <SectionHeading
-          eyebrow="PROCESSO"
-          eyebrowValue="04"
-          title={"Moldagem em casa.\n4 passos, 4 minutos."}
-          description="Sem ida ao dentista. Sem molde de gesso. Material termomoldável profissional. Você recebe o kit, segue o guia, treina no mesmo dia."
-        />
+        <MotionReveal direction="up">
+          <SectionHeading
+            eyebrow="COMO É QUE FAZ"
+            eyebrowValue="05"
+            title={"Em casa.\n4 passos. 4 minutos."}
+            description="Não precisa ir no dentista. Não precisa esperar molde de gesso. Você recebe o kit em casa, segue o vídeo, e sai pronto pra treinar na mesma noite."
+          />
+        </MotionReveal>
 
         <div className="relative mt-16 lg:mt-24">
           {/* Connector line on desktop */}
@@ -22,9 +25,13 @@ export function Process() {
             className="hidden lg:block absolute top-12 left-0 right-0 h-px bg-[var(--color-border-strong)]"
           />
 
-          <ol className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 relative">
+          <MotionStagger
+            delay={0.12}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 relative"
+          >
             {processSteps.map((step) => (
-              <li key={step.step} className="flex flex-col gap-4 relative">
+              <MotionStaggerItem key={step.step}>
+                <div className="flex flex-col gap-4 relative">
                 {/* Step number dot on the line */}
                 <div className="relative flex items-center justify-center w-24 h-24">
                   <span
@@ -41,13 +48,14 @@ export function Process() {
                 <p className="text-sm text-[var(--color-fg-muted)]">
                   {step.description}
                 </p>
-              </li>
+                </div>
+              </MotionStaggerItem>
             ))}
-          </ol>
+          </MotionStagger>
         </div>
 
         {/* Bottom strip — guarantee */}
-        <div className="mt-16 lg:mt-24 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 p-6 border border-[var(--color-accent)] bg-[color-mix(in_oklab,var(--color-accent)_5%,transparent)]">
+        <MotionReveal direction="scale" className="mt-16 lg:mt-24 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 p-6 border border-[var(--color-accent)] bg-[color-mix(in_oklab,var(--color-accent)_5%,transparent)]">
           <div className="flex items-center gap-4">
             <span
               aria-hidden
@@ -58,10 +66,10 @@ export function Process() {
             </p>
           </div>
           <p className="text-sm text-[var(--color-fg-muted)]">
-            Não encaixou? Refazemos sem custo. Você só treina quando estiver
-            perfeito.
+            Não encaixou? Manda outro sem custo. Você só treina quando tiver
+            certeza que tá perfeito.
           </p>
-        </div>
+        </MotionReveal>
       </div>
     </section>
   );

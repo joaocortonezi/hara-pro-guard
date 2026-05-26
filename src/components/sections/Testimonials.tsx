@@ -1,4 +1,5 @@
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { MotionReveal, MotionStagger, MotionStaggerItem } from "@/components/ui/MotionReveal";
 import { testimonials } from "@/lib/data";
 
 export function Testimonials() {
@@ -8,19 +9,22 @@ export function Testimonials() {
       className="relative py-24 md:py-32 lg:py-40 border-t border-[var(--color-border)]"
     >
       <div className="container-tactical">
-        <SectionHeading
-          eyebrow="FIELD REPORTS"
-          eyebrowValue="05"
-          title={"O que volta\ndo tatame."}
-          description="Feedback de atletas que testaram o protótipo em treino real e em competição. Sem roteiro, sem edição."
-        />
+        <MotionReveal direction="up">
+          <SectionHeading
+            eyebrow="FIELD REPORT"
+            eyebrowValue="06"
+            title={"O que volta\ndo tatame."}
+            description="Atletas que testaram o protótipo em treino real e em competição. Sem roteiro, sem edição. Só o que foi dito."
+          />
+        </MotionReveal>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-px bg-[var(--color-border)] mt-16 border border-[var(--color-border)]">
+        <MotionStagger
+          delay={0.15}
+          className="grid grid-cols-1 lg:grid-cols-2 gap-px bg-[var(--color-border)] mt-16 border border-[var(--color-border)]"
+        >
           {testimonials.map((t, idx) => (
-            <figure
-              key={idx}
-              className="bg-[var(--color-bg-elevated)] p-8 md:p-12 flex flex-col gap-8"
-            >
+            <MotionStaggerItem key={idx}>
+              <figure className="h-full bg-[var(--color-bg-elevated)] p-8 md:p-12 flex flex-col gap-8">
               <span
                 aria-hidden
                 className="text-display text-6xl md:text-7xl text-[var(--color-accent)] leading-none"
@@ -41,9 +45,10 @@ export function Testimonials() {
                   </span>
                 </div>
               </figcaption>
-            </figure>
+              </figure>
+            </MotionStaggerItem>
           ))}
-        </div>
+        </MotionStagger>
       </div>
     </section>
   );

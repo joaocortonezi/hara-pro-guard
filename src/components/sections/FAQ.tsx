@@ -16,9 +16,10 @@ export function FAQ() {
     >
       <div className="container-tactical">
         <SectionHeading
-          eyebrow="FAQ"
-          eyebrowValue="06"
-          title={"Perguntas\nfrequentes."}
+          eyebrow="O QUE AINDA TÁ PEGANDO"
+          eyebrowValue="07"
+          title={"Antes de\nbater o martelo."}
+          description="As perguntas que mais aparecem na DM. Se a sua não tá aqui, manda mensagem no WhatsApp — respondo direto."
           align="left"
         />
 

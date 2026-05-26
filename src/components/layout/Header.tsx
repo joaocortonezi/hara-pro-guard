@@ -2,10 +2,10 @@ import { Logo } from "@/components/ui/Logo";
 import { Button } from "@/components/ui/Button";
 
 const navLinks = [
-  { href: "#produto", label: "Produto" },
-  { href: "#dentista", label: "Engenharia" },
-  { href: "#atletas", label: "Atletas" },
-  { href: "#faq", label: "FAQ" },
+  { href: "/#produto", label: "v.01" },
+  { href: "/#custom", label: "Custom" },
+  { href: "/atletas", label: "Atletas" },
+  { href: "/#faq", label: "FAQ" },
 ];
 
 export function Header() {
@@ -29,8 +29,8 @@ export function Header() {
           ))}
         </nav>
 
-        <Button href="#produto" size="sm">
-          Garantir v.01
+        <Button href="/checkout" size="sm">
+          Comprar
         </Button>
       </div>
     </header>
