@@ -22,7 +22,7 @@ export function Athletes() {
             eyebrow="QUEM MORDE COM A GENTE"
             eyebrowValue="04"
             title={"Tactical Roster."}
-            description="Atletas patrocinados pelo Hara Pro Guard. Quer entrar? Manda mensagem — abrindo vagas em todas as modalidades."
+            description="Atletas patrocinados pelo Hara Pro Guard. Quer entrar? Manda mensagem. Abrindo vagas em todas as modalidades."
           />
           <Button href="/atletas" variant="ghost" size="md" className="mt-4">
             Ver roster completo

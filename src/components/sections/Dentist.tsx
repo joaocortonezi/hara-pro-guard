@@ -53,7 +53,7 @@ export function Dentist() {
               eyebrow="QUEM TÁ ATRÁS DISSO"
               eyebrowValue="03"
               title={"Não é marca de academia.\nÉ dentista que entende\nde luta."}
-              description="Dr. João Hara passou 10 anos no consultório atendendo atleta. Ouvia a mesma queixa toda semana — protetor de farmácia escorrega, protetor sob medida custa caro e demora. Em vez de continuar reclamando junto, ele fez o que faltava."
+              description="Dr. João Hara passou 10 anos no consultório atendendo atleta. Ouvia a mesma queixa toda semana: protetor de farmácia escorrega, protetor sob medida custa caro e demora. Em vez de continuar reclamando junto, ele fez o que faltava."
             />
 
             <div className="mt-4 space-y-4 text-[var(--color-fg-muted)] max-w-2xl">

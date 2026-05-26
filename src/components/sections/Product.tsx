@@ -19,7 +19,7 @@ export function Product() {
             eyebrow="O QUE TÁ CERTO"
             eyebrowValue="02"
             title={"Hara Pro Guard.\nO protetor que tinha que existir."}
-            description="Dual-layer 4.2mm em EVA premium. Geometria desenvolvida em consultório, calibrada por região da arcada. Não é protetor de farmácia — é equipamento profissional."
+            description="Dual-layer 4.2mm em EVA premium. Geometria desenvolvida em consultório, calibrada por região da arcada. Não é protetor de farmácia. É equipamento profissional."
           />
         </MotionReveal>
 
@@ -29,7 +29,7 @@ export function Product() {
             <div className="relative aspect-[4/3] bg-[var(--color-bg-deep)] border border-[var(--color-border-strong)] overflow-hidden">
               <Image
                 src="/images/product-hero.jpg"
-                alt={`${siteConfig.product.name} — vistas múltiplas`}
+                alt={`${siteConfig.product.name}, vistas múltiplas`}
                 fill
                 sizes="(min-width: 1024px) 60vw, 100vw"
                 className="object-cover"

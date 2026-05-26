@@ -33,7 +33,7 @@ export default function AtletasPage() {
             </h1>
             <p className="text-base sm:text-lg text-[var(--color-fg-muted)] max-w-2xl mt-2">
               Atletas que entram no octógono, ringue e tatame com o Hara Pro
-              Guard na boca. Recrutamento permanente — se você compete e quer
+              Guard na boca. Recrutamento permanente. Se você compete e quer
               entrar pro programa de patrocínio, candidata abaixo.
             </p>
           </div>
@@ -77,7 +77,7 @@ export default function AtletasPage() {
                 Patrocínio inclui kit Hara Pro Guard Custom (moldagem no
                 consultório do Dr. João), reposição garantida durante o ano,
                 e cobertura nas mídias da marca. Procuramos atletas com
-                trajetória competitiva — amador avançado ou profissional.
+                trajetória competitiva: amador avançado ou profissional.
               </p>
             </div>
             <div className="md:col-span-4 flex flex-col gap-2">

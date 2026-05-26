@@ -27,7 +27,7 @@ const features = [
     n: "04",
     title: "Garantia de 24 meses.",
     description:
-      "O dobro do tempo do v.01. Ajuste no consultório se precisar — você volta, ajusta, leva pra casa sem custo extra.",
+      "O dobro do tempo do v.01. Ajuste no consultório se precisar, você volta, ajusta, leva pra casa sem custo extra.",
   },
 ];
 
@@ -77,7 +77,7 @@ export function Custom() {
             <p className="text-base sm:text-lg text-[var(--color-fg-muted)]">
               O v.01 é dual-layer feito pra encaixar em qualquer atleta. O{" "}
               <span className="text-[var(--color-custom)]">Hara Custom</span> é
-              o nível profissional — molde da sua boca, espessura calibrada,
+              o nível profissional: molde da sua boca, espessura calibrada,
               acabamento personalizado. Feito por dentista, no consultório, só
               pra você.
             </p>

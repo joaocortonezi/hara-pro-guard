@@ -15,7 +15,7 @@ export function Hero() {
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <Image
           src="/images/athlete-jiu-jitsu.jpg"
-          alt="Atletas no tatame — atmosfera do gym"
+          alt="Atletas no tatame, atmosfera do gym"
           fill
           priority
           sizes="100vw"
@@ -59,7 +59,7 @@ export function Hero() {
               <p className="text-base sm:text-lg md:text-xl text-[var(--color-fg-muted)] max-w-2xl mt-4">
                 Você compra protetor de farmácia esperando que ele segure a porrada.
                 Spoiler: não segura. O Hara Pro Guard foi desenhado no consultório
-                de um dentista que atende atleta — pra aguentar o que o seu treino
+                de um dentista que atende atleta. Pra aguentar o que o seu treino
                 pesa.
               </p>
             </MotionStaggerItem>
@@ -88,7 +88,7 @@ export function Hero() {
               {/* Product image */}
               <Image
                 src="/images/product-hero.jpg"
-                alt={`${siteConfig.product.name} — vista do produto`}
+                alt={`${siteConfig.product.name}, vista do produto`}
                 fill
                 priority
                 sizes="(min-width: 1024px) 33vw, 100vw"

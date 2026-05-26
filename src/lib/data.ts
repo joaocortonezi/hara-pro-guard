@@ -36,7 +36,7 @@ export const athletes: Athlete[] = [
     modality: "MMA",
     weightClass: "Leve · 77kg",
     record: "Recrutando",
-    location: "—",
+    location: "Brasil",
     status: "open",
     image: "/images/athlete-ring.jpg",
   },
@@ -46,7 +46,7 @@ export const athletes: Athlete[] = [
     modality: "Muay Thai",
     weightClass: "Médio · 84kg",
     record: "Recrutando",
-    location: "—",
+    location: "Brasil",
     status: "open",
     image: "/images/athlete-mma-dark.jpg",
   },
@@ -56,7 +56,7 @@ export const athletes: Athlete[] = [
     modality: "Boxe",
     weightClass: "Pesado · 93kg+",
     record: "Recrutando",
-    location: "—",
+    location: "Brasil",
     status: "open",
     image: "/images/athlete-mma.jpg",
   },
@@ -66,7 +66,7 @@ export const athletes: Athlete[] = [
     modality: "Jiu-Jitsu",
     weightClass: "Leve · 76kg",
     record: "Recrutando",
-    location: "—",
+    location: "Brasil",
     status: "open",
   },
   {
@@ -75,7 +75,7 @@ export const athletes: Athlete[] = [
     modality: "MMA",
     weightClass: "Meio-Médio · 84kg",
     record: "Recrutando",
-    location: "—",
+    location: "Brasil",
     status: "open",
   },
 ];
@@ -138,7 +138,7 @@ export type FAQItem = {
 export const faqItems: FAQItem[] = [
   {
     q: "Quanto tempo dura?",
-    a: "18 meses de uso pesado. Testamos com atleta competindo todo final de semana — passa do ano sem perder geometria. Se você só treina, dura mais.",
+    a: "18 meses de uso pesado. Testamos com atleta competindo todo final de semana e passa do ano sem perder geometria. Se você só treina, dura mais.",
   },
   {
     q: "Serve pra qual esporte?",
@@ -150,15 +150,15 @@ export const faqItems: FAQItem[] = [
   },
   {
     q: "Como faço se a moldagem ficar torta?",
-    a: "Refaz. O material aceita duas remoldagens sem perder propriedade. Se mesmo assim não encaixar, te mando outro sem custo. A garantia é de fitting — só treina quando tá perfeito.",
+    a: "Refaz. O material aceita duas remoldagens sem perder propriedade. Se mesmo assim não encaixar, te mando outro sem custo. A garantia é de fitting: só treina quando tá perfeito.",
   },
   {
     q: "Posso higienizar com o quê?",
-    a: "Água + sabão neutro depois de cada treino. Uma vez por semana, deixa de molho em pastilha efervescente de prótese dentária. Evita álcool — ressaca o EVA.",
+    a: "Água + sabão neutro depois de cada treino. Uma vez por semana, deixa de molho em pastilha efervescente de prótese dentária. Evita álcool, ele ressaca o EVA.",
   },
   {
     q: "Por que é mais caro que o de farmácia?",
-    a: "Porque protetor de farmácia é EVA single-layer 2mm. Esse aqui é dual-layer 4.2mm com zona diferenciada na região dos molares. Material, geometria e durabilidade não tem comparação — é a diferença entre tênis de academia e chuteira de campeonato.",
+    a: "Porque protetor de farmácia é EVA single-layer 2mm. Esse aqui é dual-layer 4.2mm com zona diferenciada na região dos molares. Material, geometria e durabilidade não tem comparação. É a diferença entre tênis de academia e chuteira de campeonato.",
   },
 ];
 

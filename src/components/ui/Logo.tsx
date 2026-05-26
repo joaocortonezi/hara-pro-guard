@@ -38,7 +38,7 @@ export function Logo({ className, asLink = true }: LogoProps) {
   return (
     <Link
       href="/"
-      aria-label="Hara Pro Guard — voltar à home"
+      aria-label="Hara Pro Guard · voltar à home"
       className="hover:opacity-80 transition-opacity"
     >
       {content}

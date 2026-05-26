@@ -19,7 +19,7 @@ export function FAQ() {
           eyebrow="O QUE AINDA TÁ PEGANDO"
           eyebrowValue="07"
           title={"Antes de\nbater o martelo."}
-          description="As perguntas que mais aparecem na DM. Se a sua não tá aqui, manda mensagem no WhatsApp — respondo direto."
+          description="As perguntas que mais aparecem na DM. Se a sua não tá aqui, manda mensagem no WhatsApp. Respondo direto."
           align="left"
         />
 
