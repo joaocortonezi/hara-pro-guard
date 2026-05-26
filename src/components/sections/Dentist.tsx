@@ -24,15 +24,15 @@ export function Dentist() {
             <div className="relative aspect-[4/5] border border-[var(--color-border-strong)] bg-[var(--color-bg-deep)] overflow-hidden">
               <Image
                 src="/images/dentist-portrait.jpg"
-                alt={`Retrato de ${siteConfig.founder.name}`}
+                alt={`${siteConfig.founder.name} em atendimento clínico`}
                 fill
                 sizes="(min-width: 1024px) 40vw, 100vw"
-                className="object-cover grayscale contrast-110"
+                className="object-cover object-center"
               />
-              {/* Dark tint overlay to match brand tone */}
+              {/* Subtle bottom gradient so the founder card text stays readable */}
               <div
                 aria-hidden
-                className="absolute inset-0 bg-gradient-to-t from-[var(--color-bg)] via-[var(--color-bg)]/30 to-transparent"
+                className="absolute inset-0 bg-gradient-to-t from-[var(--color-bg)] via-transparent to-transparent"
               />
               <ReticleCorners />
               <div className="absolute bottom-6 left-6 right-6 flex flex-col gap-2">
@@ -44,9 +44,6 @@ export function Dentist() {
                   {siteConfig.founder.role}
                 </p>
               </div>
-              <p className="absolute top-4 right-4 font-mono text-[9px] uppercase tracking-[0.15em] text-[var(--color-fg-subtle)]">
-                placeholder · foto real em breve
-              </p>
             </div>
           </MotionReveal>
 
