@@ -56,8 +56,7 @@ export function RosterGrid() {
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-[var(--color-border)] border border-[var(--color-border)]"
       >
         <AnimatePresence mode="popLayout">
-          {filtered.map((athlete, idx) => {
-            const hasPhoto = idx === 0 && filter !== "MMA" && filter !== "Muay Thai" && filter !== "Boxe";
+          {filtered.map((athlete) => {
             const isOpen = athlete.status === "open";
 
             return (
@@ -75,9 +74,9 @@ export function RosterGrid() {
               >
                 {/* Photo area */}
                 <div className="relative aspect-[3/4] border-b border-[var(--color-border)] overflow-hidden bg-[var(--color-bg-deep)]">
-                  {hasPhoto ? (
+                  {athlete.image ? (
                     <Image
-                      src="/images/athlete-jiu-jitsu.jpg"
+                      src={athlete.image}
                       alt={`Atleta ${athlete.name}`}
                       fill
                       sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
@@ -132,7 +131,7 @@ export function RosterGrid() {
 
                   {isOpen ? (
                     <a
-                      href="https://wa.me/5511999999999?text=Quero%20entrar%20no%20roster%20Hara"
+                      href="https://wa.me/5566999999999?text=Quero%20entrar%20no%20roster%20Hara"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="mt-2 flex items-center justify-between gap-2 bg-[var(--color-bg)] border border-[var(--color-fg-subtle)] px-4 py-3 font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--color-fg-muted)] hover:text-[var(--color-accent)] hover:border-[var(--color-accent)] transition-colors"

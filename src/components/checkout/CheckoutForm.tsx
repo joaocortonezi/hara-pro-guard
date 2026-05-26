@@ -130,7 +130,7 @@ export function CheckoutForm() {
             required
             value={data.state}
             onChange={(v) => update("state", v)}
-            placeholder="SP"
+            placeholder="MT"
           />
           <Field
             label="CEP"

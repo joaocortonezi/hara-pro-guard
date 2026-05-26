@@ -29,11 +29,13 @@
   --color-accent-deep: #444b00;
   --color-on-accent: #0c0f0f;
 
-  /* Custom tier — bespoke mouthguard signal */
-  --color-custom: #10f0a0;
-  --color-custom-dim: #0bc283;
-  --color-custom-deep: #054a33;
-  --color-on-custom: #0c0f0f;
+  /* Custom tier — brand olive/lime family from design.md */
+  --color-custom: #dbee00;        /* primary-container — bright lime accent */
+  --color-custom-dim: #c0d100;    /* surface-tint — dimmer lime */
+  --color-custom-mid: #5b6400;    /* inverse-primary — mid olive (subtle bg accents) */
+  --color-custom-deep: #2e3300;   /* on-primary — section background dominante */
+  --color-custom-darker: #1a1e00; /* on-primary-fixed — card surface within green section */
+  --color-on-custom: #1a1e00;     /* text/icon on bright lime */
 
   /* Pure-black accent surface (per design.md "deep backgrounds and high-contrast sections") */
   --color-bg-deep: #000000;

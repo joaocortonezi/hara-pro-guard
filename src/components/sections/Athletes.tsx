@@ -10,8 +10,6 @@ import { ArrowRightIcon } from "lucide-react";
 export function Athletes() {
   // Show first 4 on home — full roster lives on /atletas
   const featured = athletes.slice(0, 4);
-  // The first slot is the real photo, rest are placeholders
-  const heroImage = "/images/athlete-jiu-jitsu.jpg";
 
   return (
     <section
@@ -36,20 +34,19 @@ export function Athletes() {
           delay={0.08}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-[var(--color-border)] mt-8 border border-[var(--color-border)]"
         >
-          {featured.map((athlete, idx) => {
-            const hasPhoto = idx === 0;
+          {featured.map((athlete) => {
             return (
               <MotionStaggerItem key={athlete.id}>
                 <article className="group relative h-full bg-[var(--color-bg-elevated)] hover:bg-[var(--color-bg-surface)] transition-colors">
                 {/* Photo area */}
                 <div className="relative aspect-[3/4] border-b border-[var(--color-border)] overflow-hidden bg-[var(--color-bg-deep)]">
-                  {hasPhoto ? (
+                  {athlete.image ? (
                     <Image
-                      src={heroImage}
+                      src={athlete.image}
                       alt={`Atleta ${athlete.name}`}
                       fill
                       sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
-                      className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                      className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105"
                     />
                   ) : (
                     <div className="absolute inset-0 flex items-center justify-center">
@@ -88,7 +85,7 @@ export function Athletes() {
         <p className="text-center font-mono text-[11px] uppercase tracking-[0.2em] text-[var(--color-fg-muted)] mt-12">
           Atleta interessado em patrocínio?{" "}
           <a
-            href="https://wa.me/5511999999999"
+            href="https://wa.me/5566999999999"
             className="text-[var(--color-accent)] hover:underline"
           >
             Manda mensagem

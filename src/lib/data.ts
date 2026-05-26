@@ -15,6 +15,7 @@ export type Athlete = {
   record: string;
   location: string;
   status: "active" | "open";
+  image?: string;
 };
 
 export const athletes: Athlete[] = [
@@ -25,8 +26,9 @@ export const athletes: Athlete[] = [
     modality: "Jiu-Jitsu",
     weightClass: "Pena · 70kg",
     record: "12W · 2L",
-    location: "São Paulo · BR",
+    location: "Sinop-MT · BR",
     status: "active",
+    image: "/images/athlete-jiu-jitsu.jpg",
   },
   {
     id: "002",
@@ -36,6 +38,7 @@ export const athletes: Athlete[] = [
     record: "Recrutando",
     location: "—",
     status: "open",
+    image: "/images/athlete-ring.jpg",
   },
   {
     id: "003",
@@ -45,6 +48,7 @@ export const athletes: Athlete[] = [
     record: "Recrutando",
     location: "—",
     status: "open",
+    image: "/images/athlete-mma-dark.jpg",
   },
   {
     id: "004",
@@ -54,6 +58,7 @@ export const athletes: Athlete[] = [
     record: "Recrutando",
     location: "—",
     status: "open",
+    image: "/images/athlete-mma.jpg",
   },
   {
     id: "005",
@@ -168,7 +173,7 @@ export const testimonials: Testimonial[] = [
     quote:
       "Encaixou na primeira moldagem. Dois meses de treino pesado, sem reajuste, sem cuspir no meio do roll.",
     author: "Faixa-marrom · BJJ",
-    context: "São Paulo · 6 meses de uso",
+    context: "Sinop-MT · 6 meses de uso",
   },
   {
     quote:

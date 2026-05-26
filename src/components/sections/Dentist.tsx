@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { SpecTag } from "@/components/ui/SpecTag";
 import { ReticleCorners } from "@/components/ui/Reticle";
@@ -18,18 +19,22 @@ export function Dentist() {
     >
       <div className="container-tactical">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          {/* Portrait placeholder */}
+          {/* Portrait */}
           <MotionReveal direction="left" className="lg:col-span-5 order-2 lg:order-1">
-            <div className="relative aspect-[4/5] border border-[var(--color-border-strong)] bg-[var(--color-bg)] overflow-hidden">
+            <div className="relative aspect-[4/5] border border-[var(--color-border-strong)] bg-[var(--color-bg-deep)] overflow-hidden">
+              <Image
+                src="/images/dentist-portrait.jpg"
+                alt={`Retrato de ${siteConfig.founder.name}`}
+                fill
+                sizes="(min-width: 1024px) 40vw, 100vw"
+                className="object-cover grayscale contrast-110"
+              />
+              {/* Dark tint overlay to match brand tone */}
+              <div
+                aria-hidden
+                className="absolute inset-0 bg-gradient-to-t from-[var(--color-bg)] via-[var(--color-bg)]/30 to-transparent"
+              />
               <ReticleCorners />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span
-                  aria-hidden
-                  className="text-display text-[12rem] text-[var(--color-accent)]/[0.05] select-none leading-none"
-                >
-                  JH
-                </span>
-              </div>
               <div className="absolute bottom-6 left-6 right-6 flex flex-col gap-2">
                 <SpecTag label="FUNDADOR" variant="accent" />
                 <p className="text-display text-2xl md:text-3xl text-[var(--color-fg)]">
@@ -39,6 +44,9 @@ export function Dentist() {
                   {siteConfig.founder.role}
                 </p>
               </div>
+              <p className="absolute top-4 right-4 font-mono text-[9px] uppercase tracking-[0.15em] text-[var(--color-fg-subtle)]">
+                placeholder · foto real em breve
+              </p>
             </div>
           </MotionReveal>
 

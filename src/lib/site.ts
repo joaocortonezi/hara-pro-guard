@@ -8,13 +8,13 @@ export const siteConfig = {
   ogImage: "/og.jpg",
   links: {
     instagram: "https://instagram.com/haraproguard",
-    whatsapp: "https://wa.me/5511999999999",
+    whatsapp: "https://wa.me/5566999999999",
     email: "contato@haraproguard.com.br",
   },
   founder: {
     name: "Dr. João Hara",
     role: "Cirurgião-Dentista Esportivo",
-    cro: "CRO-SP XXXXX",
+    cro: "CRO-MT XXXXX",
   },
   product: {
     name: "Hara Pro Guard v.01",

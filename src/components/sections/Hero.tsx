@@ -45,15 +45,12 @@ export function Hero() {
         {/* Headline grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
           <MotionStagger delay={0.12} className="lg:col-span-8 flex flex-col gap-6">
-            <h1 className="text-display text-5xl sm:text-7xl md:text-8xl lg:text-[10rem] leading-[0.9]">
+            <h1 className="text-display text-5xl sm:text-6xl md:text-7xl lg:text-9xl leading-[0.9]">
               <MotionStaggerItem>
-                <span className="block text-[var(--color-fg)]">FEITO POR</span>
+                <span className="block text-[var(--color-fg)]">FEITO POR ATLETAS</span>
               </MotionStaggerItem>
               <MotionStaggerItem>
-                <span className="block text-[var(--color-fg)]">DENTISTA.</span>
-              </MotionStaggerItem>
-              <MotionStaggerItem>
-                <span className="block text-[var(--color-accent)]">PRA LUTADOR.</span>
+                <span className="block text-[var(--color-accent)]">PARA ATLETAS.</span>
               </MotionStaggerItem>
             </h1>
 

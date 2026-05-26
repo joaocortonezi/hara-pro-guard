@@ -82,7 +82,7 @@ export default function AtletasPage() {
             </div>
             <div className="md:col-span-4 flex flex-col gap-2">
               <a
-                href="https://wa.me/5511999999999?text=Quero%20entrar%20no%20Hara%20Roster"
+                href="https://wa.me/5566999999999?text=Quero%20entrar%20no%20Hara%20Roster"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-[var(--color-accent)] text-[var(--color-on-accent)] font-mono uppercase tracking-wider text-sm py-4 text-center hover:bg-[var(--color-fg)] transition-colors clip-corner-sm"
