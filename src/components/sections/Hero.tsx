@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { SpecTag } from "@/components/ui/SpecTag";
+import { siteConfig } from "@/lib/site";
 import { Button } from "@/components/ui/Button";
 import { Ticker } from "@/components/ui/Ticker";
 import { ReticleCorners, Crosshair } from "@/components/ui/Reticle";
@@ -83,35 +84,52 @@ export function Hero() {
             duration={0.7}
             className="lg:col-span-4 relative"
           >
-            <div className="relative aspect-square border border-[var(--color-border-strong)] bg-[var(--color-bg-deep)]/80 backdrop-blur-sm p-6 md:p-8">
+            <div className="relative aspect-square border border-[var(--color-border-strong)] bg-[var(--color-bg-deep)] overflow-hidden">
+              {/* Product image */}
+              <Image
+                src="/images/product-hero.jpg"
+                alt={`${siteConfig.product.name} — vista do produto`}
+                fill
+                priority
+                sizes="(min-width: 1024px) 33vw, 100vw"
+                className="object-cover"
+              />
+
+              {/* Dark fade overlay so the specs panel stays readable */}
+              <div
+                aria-hidden
+                className="absolute inset-0 bg-gradient-to-t from-[var(--color-bg-deep)] via-[var(--color-bg-deep)]/40 to-transparent pointer-events-none"
+              />
+
               <ReticleCorners />
-              <Crosshair className="absolute top-4 right-4" />
+              <Crosshair className="absolute top-4 right-4 z-10" />
+
+              {/* Top corner label */}
+              <div className="absolute top-4 left-4 flex items-center gap-2 z-10">
+                <span
+                  aria-hidden
+                  className="inline-block h-1.5 w-1.5 bg-[var(--color-accent)] animate-pulse-accent"
+                />
+                <span className="font-mono text-[10px] uppercase tracking-[0.15em] text-[var(--color-accent)]">
+                  HPG · v.01
+                </span>
+              </div>
 
               {/* Specs panel */}
-              <div className="absolute inset-x-6 bottom-6 md:inset-x-8 md:bottom-8 flex flex-col gap-3">
+              <div className="absolute inset-x-6 bottom-6 md:inset-x-8 md:bottom-8 flex flex-col gap-3 z-10">
                 <div className="flex items-center justify-between">
                   <span className="font-mono text-[10px] uppercase tracking-[0.15em] text-[var(--color-fg-subtle)]">
                     HARA PRO GUARD
                   </span>
                   <span className="font-mono text-[10px] uppercase tracking-[0.15em] text-[var(--color-accent)]">
-                    v.01
+                    LIVE
                   </span>
                 </div>
-                <div className="h-px bg-[var(--color-border)]" />
+                <div className="h-px bg-[var(--color-border-strong)]" />
                 <SpecRow label="Peso" value="9.8g" />
                 <SpecRow label="Espessura" value="4.2mm" />
                 <SpecRow label="Absorção" value="92%" />
                 <SpecRow label="Material" value="EVA Dual" />
-              </div>
-
-              {/* Watermark wordmark */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span
-                  aria-hidden
-                  className="text-display text-[12rem] text-[var(--color-accent)]/10 select-none leading-none"
-                >
-                  HPG
-                </span>
               </div>
             </div>
           </MotionReveal>
